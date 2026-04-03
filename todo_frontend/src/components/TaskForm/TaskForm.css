@@ -1,0 +1,59 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: fadeIn 0.15s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.2s ease;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px 0; }
+.modal-title { font-size: 18px; font-weight: 700; color: #111827; margin: 0; }
+.modal-close { background: none; border: none; font-size: 18px; color: #9ca3af; cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.15s ease, color 0.15s ease; line-height: 1; }
+.modal-close:hover { background: #f3f4f6; color: #111827; }
+
+.task-form { padding: 20px 24px 24px; }
+.task-form__error { background: #fee2e2; color: #dc2626; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; margin-bottom: 16px; }
+.task-form__field { margin-bottom: 16px; flex: 1; }
+.task-form__label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+.task-form__required { color: #EF4444; }
+
+.task-form__input,
+.task-form__textarea,
+.task-form__select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+}
+.task-form__input:focus,
+.task-form__textarea:focus,
+.task-form__select:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); }
+.task-form__textarea { resize: vertical; min-height: 80px; }
+
+.task-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.task-form__actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+@media (max-width: 480px) {
+  .modal-content { max-width: 100%; }
+  .task-form__row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,17 @@
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 1024px) {
+  .kanban-board { grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px; }
+}
+
+@media (max-width: 640px) {
+  .kanban-board { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+}
